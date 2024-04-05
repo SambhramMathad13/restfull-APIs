@@ -4,8 +4,8 @@ from rest.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('stud/',Studapi.as_view()),
-    path('stud/<int:id>',Studapi.as_view()),
+    path('stud/',StudapiLC.as_view()),
+    path('stud/<int:pk>',StudapiRUD.as_view()),
 
 
 
