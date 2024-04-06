@@ -1,18 +1,30 @@
 # from rest_framework.response import Response
 # from rest_framework.decorators import api_view
 # from rest_framework.views import APIView
+# from .serializer import Studserializer
+# from .models import *
+# from rest_framework.generics import ListCreateAPIView,RetrieveUpdateDestroyAPIView
+# # from rest_framework import status
+
+# class StudapiLC(ListCreateAPIView):
+#     queryset=Studs.objects.all()
+#     serializer_class=Studserializer
+
+# class StudapiRUD(RetrieveUpdateDestroyAPIView):
+#     queryset=Studs.objects.all()
+#     serializer_class=Studserializer   
+
+
+
+
+from rest_framework.viewsets import ModelViewSet
 from .serializer import Studserializer
-from .models import *
-from rest_framework.generics import ListCreateAPIView,RetrieveUpdateDestroyAPIView
-# from rest_framework import status
+from .models import Studs
 
-class StudapiLC(ListCreateAPIView):
-    queryset=Studs.objects.all()
-    serializer_class=Studserializer
+class StudModelViewset(ModelViewSet):
+    queryset = Studs.objects.all()
+    serializer_class = Studserializer
 
-class StudapiRUD(RetrieveUpdateDestroyAPIView):
-    queryset=Studs.objects.all()
-    serializer_class=Studserializer    
 
 
 
