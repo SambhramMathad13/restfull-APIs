@@ -4,3 +4,5 @@ class Studs(models.Model):
     roll=models.IntegerField()
     def __name__(self):
         return self.name
+    
+    

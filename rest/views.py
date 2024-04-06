@@ -20,10 +20,14 @@
 from rest_framework.viewsets import ModelViewSet
 from .serializer import Studserializer
 from .models import Studs
+from rest_framework.permissions import IsAuthenticated
+from rest_framework_simplejwt.authentication import JWTAuthentication
 
 class StudModelViewset(ModelViewSet):
     queryset = Studs.objects.all()
     serializer_class = Studserializer
+    authentication_classes=[JWTAuthentication]
+    permission_classes=[IsAuthenticated]
 
 
 
